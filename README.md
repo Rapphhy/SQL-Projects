@@ -40,17 +40,18 @@ Use the commands below to create tables and import the data.
 #### Create the `transactions` Table
 ```sql
 CREATE TABLE transactions (
-    transaction_id SERIAL PRIMARY KEY,
-    session_id VARCHAR(255),
-    client_id INT,
+    id SERIAL PRIMARY KEY,
+    transaction_type INT,
     transaction_date TIMESTAMP,
-    transaction_type VARCHAR(255),
-    amount NUMERIC
+    client_id INT,
+    amount NUMERIC,
+    merchant_id INT,
+    app_id INT
 );
 ```
 #### Import Data:
 ```sql
-\COPY transactions(session_id, client_id, transaction_date, transaction_type, amount)
+\COPY transactions(id, transaction_type, transaction_date, client_id, amount, merchant_id, app_id)
 FROM '/path/to/transactions.csv'
 DELIMITER ','
 CSV HEADER;
@@ -59,15 +60,14 @@ CSV HEADER;
 #### Create the `payment_details` Table
 ```sql
 CREATE TABLE payment_details (
-    payment_id SERIAL PRIMARY KEY,
-    transaction_id INT REFERENCES transactions(transaction_id),
-    provider VARCHAR(255),
-    payment_status VARCHAR(50)
+    id SERIAL PRIMARY KEY,
+    receipt_no VARCHAR(255),
+    acct_open_date DATE
 );
 ```
 #### Import Data:
 ```sql
-\COPY payment_details(transaction_id, provider, payment_status)
+\COPY payment_details(id, receipt_no, acct_open_date)
 FROM '/path/to/payment_details.csv'
 DELIMITER ','
 CSV HEADER;
@@ -76,16 +76,13 @@ CSV HEADER;
 #### Create the `transaction_request` Table
 ```sql
 CREATE TABLE transaction_request (
-    request_id SERIAL PRIMARY KEY,
-    session_id VARCHAR(255),
-    client_id INT,
-    request_date TIMESTAMP,
-    request_status VARCHAR(50)
+    transaction_id INT PRIMARY KEY,
+    description TEXT
 );
 ```
 #### Import Data:
 ```sql
-\COPY transaction_request(session_id, client_id, request_date, request_status)
+\COPY transaction_request(transaction_id, description)
 FROM '/path/to/transaction_request.csv'
 DELIMITER ','
 CSV HEADER;
@@ -98,23 +95,26 @@ Replace `/path/to/` with the actual file paths to your CSV files.
 ## 4️⃣ Explore the Data 📊
 
 ### Dataset Descriptions:
-1. **`transactions` Table**: 
+1. **`transactions` Table**:
    - Records all financial transactions.
    - Key columns:
+     - `transaction_type`: Type of transaction (e.g., purchase, transfer).
      - `transaction_date`: When the transaction occurred.
+     - `client_id`: The client involved in the transaction.
      - `amount`: The monetary value of the transaction.
-     - `transaction_type`: Nature of the transaction (e.g., credit, debit).
+     - `merchant_id`: The merchant associated with the transaction.
+     - `app_id`: The application used for the transaction.
 
-2. **`payment_details` Table**: 
-   - Tracks payment information linked to transactions.
+2. **`payment_details` Table**:
+   - Tracks payment information.
    - Key columns:
-     - `provider`: Payment service provider (e.g., PayPal, Stripe).
-     - `payment_status`: Status of the payment (e.g., successful, pending).
+     - `receipt_no`: Receipt number of the transaction.
+     - `acct_open_date`: The account opening date.
 
 3. **`transaction_request` Table**:
-   - Captures client requests for transactions.
+   - Captures additional transaction details.
    - Key columns:
-     - `request_status`: Status of the request (e.g., completed, failed).
+     - `description`: Details of the transaction or item.
 
 ### Implementations:
 - [**Monthly Transaction Analysis Query:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Monthly%20Transaction%20Analysis)
