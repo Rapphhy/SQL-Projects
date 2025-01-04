@@ -30,7 +30,7 @@ The query generates the following columns in its result set:
 - **Transaction Insights**: Identify patterns, trends, and seasonality in transaction activity
 
 ## How to Run
-1. See root readme on how to set up dataset in database.
+1. See [root readme](https://github.com/Rapphhy/SQL-Projects/blob/main/README.md) on how to set up dataset in database.
 2. Ensure you have access to a dataset by downloading the file containing the `transactions` table.
 3. Execute the SQL query in your preferred SQL client or database interface.
 
