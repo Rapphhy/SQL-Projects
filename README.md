@@ -117,6 +117,8 @@ Replace `/path/to/` with the actual file paths to your CSV files.
      - `description`: Details of the transaction or item.
 
 ### Implementations:
+- [**Data Exploration and Validation:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Monthly%20Transaction%20Analysis)
+This SQL queries designed to support both data exploration and data quality assurance. These queries provide a foundational understanding of dataset structures while ensuring the integrity of critical data. By combining sample data extraction with data integrity checks, these scripts serve as essential tools for exploratory data analysis and validation.
 - [**Monthly Transaction Analysis Query:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Monthly%20Transaction%20Analysis)
 This SQL query performs a month-on-month analysis of transaction data from the transactions table. It provides insights into the total number of transactions, total credits, total debits, and the overall transaction amounts for each month.
 
