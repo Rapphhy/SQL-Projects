@@ -1,5 +1,5 @@
 
-# Client Transaction Details Query
+# Client Transaction Details
 
 ## Query Name
 `specific_client_details.sql`
