@@ -1,4 +1,4 @@
-# Data Exploration and Validation
+# Data Insights and Validation
 
 ## Query Name
 `data-insights-and-quality-checks.sql`
