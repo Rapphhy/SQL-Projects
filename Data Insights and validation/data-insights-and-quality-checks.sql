@@ -12,7 +12,6 @@ limit 1;
 
 
 
-
 -------- **Data Quality Check** (check for missing data)
 SELECT *
 FROM transactions
