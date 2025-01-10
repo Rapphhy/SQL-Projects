@@ -116,12 +116,28 @@ Replace `/path/to/` with the actual file paths to your CSV files.
    - Key columns:
      - `description`: Details of the transaction or item.
 
+### Key Notes 
+- The **`transactions`** table includes a column named **`app_user`**, which encodes transaction actions using specific numeric values. Below is the breakdown:  
+  - `1`: Credit received from **Provider A**.  
+  - `3`: Credit received from **Provider B**.  
+  - `31`: Debit initiated by the bank based on a user-authorized instruction.  
+  - `33`: Debit initiated directly by the user through the app.
+
+- **`transaction_type`** in the **`transactions`** table categorizes transactions into two types:  
+  - `1`: **Credits** (inflows of funds).  
+  - `2`: **Debits** (outflows of funds).  
+
 ### Implementations:
-- [**Data Exploration and Validation:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Data%20Exploration%20and%20Validation)
-This SQL queries designed to support both data exploration and data quality assurance. These queries provide a foundational understanding of dataset structures while ensuring the integrity of critical data. By combining sample data extraction with data integrity checks, these scripts serve as essential tools for exploratory data analysis and validation.
+- [**Data Insight and Validation:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Data%20Exploration%20and%20Validation)
+This SQL queries is designed to support both data exploration and data quality assurance. These queries provide a foundational understanding of dataset structures while ensuring the integrity of critical data. By combining sample data extraction with data integrity checks, these scripts serve as essential tools for exploratory data analysis and validation.
 - [**Monthly Transaction Analysis Query:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Monthly%20Transaction%20Analysis)
 This SQL query performs a month-on-month analysis of transaction data from the transactions table. It provides insights into the total number of transactions, total credits, total debits, and the overall transaction amounts for each month.
-
+- [**Client Transaction Details Query:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Specific%20client%20details)
+This SQL query retrieves detailed transaction information for a specific client from a financial dataset to provide insights into the client's transactions based on defined criteria.
+- [**Provider Analysis Query:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Provider%20Analysis)
+This SQL query analyzes transaction contributions from two providers: Provider A and Provider B and provides insights into the performance and contributions of each provider.
+- [**Top transacting clients(Q1 2010) Query:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Top%20transacting%20clients)
+This SQL query identifies the top 20 clients based on transaction activity during the first quarter of 2010 (January to March).
 ---
 
 ## 5️⃣ Share Your Insights 💡
