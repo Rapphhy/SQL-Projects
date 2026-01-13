@@ -128,7 +128,7 @@ Replace `/path/to/` with the actual file paths to your CSV files.
   - `2`: **Debits** (outflows of funds).  
 
 ### Implementations:
-- [**Data Insight and Validation:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Data%20Exploration%20and%20Validation)
+- [**Data Insight and Validation:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Data%20Insights%20and%20validation)
 This SQL queries is designed to support both data exploration and data quality assurance. These queries provide a foundational understanding of dataset structures while ensuring the integrity of critical data. By combining sample data extraction with data integrity checks, these scripts serve as essential tools for exploratory data analysis and validation.
 - [**Monthly Transaction Analysis Query:**](https://github.com/Rapphhy/SQL-Projects/tree/main/Monthly%20Transaction%20Analysis)
 This SQL query performs a month-on-month analysis of transaction data from the transactions table. It provides insights into the total number of transactions, total credits, total debits, and the overall transaction amounts for each month.
