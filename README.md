@@ -1,5 +1,5 @@
-# SQL-Projects
-A collection of SQL projects showcasing advanced queries, data analysis, and real-world datasets. 🌟
+# Finance Data Analysis
+An analysis of financial datasets to uncover trends, patterns, and key performance insights🌟
 
 
 # Before you begin:
